@@ -92,8 +92,10 @@ The Joystream Testnet Token (tJOY) is backed by a USD-denominated fiat pool, and
 To exchange your tokens, follow these steps.
 1. In order for us to know what address to pay, you must link your Joystream address to your Bitcoin Cash address. The easiest way to do this is in the `My Memo` tab under the `My Keys` sidebar. Ensure that the correct account is selected (the one containing the tokens you wish to redeem) in the drop-down located in the top right-hand corner of the Pioneer interface.
 
+Note: don't use BCH wallet starts from 3XXXX (for example, such format is used on OKEX). The issue is that we can't process payouts to this address format. It needs to start with a 1 or a q usually (for example, Binance).
+
 ```
-# Only the part in the line below goes in the memo:
+# This is an example of BCH wallet address. Only the part in the line below goes in the memo:
 1OR3ORqORzYOURBBITCOINCASHADDRESS
 ```
 
@@ -105,21 +107,41 @@ To exchange your tokens, follow these steps.
 
 Once the tokens have been received to this address, the time, date, your address, your memo and the current tJOY/USD exchange rate are logged. Your tokens are then burned (reducing the tJOY issuance), and the USD amount is deducted from the fiat pool. This means that the exchange rate is not affected. Your Bitcoin Cash should arrive within 72 hours, as we are batching the transactions. Also note that the BCH/USD exchange rate is at the time of the Bitcoin Cash transfer.
 
+Sometimes payments can be delayed for 1-2 weeks. If you didn't get your money after 2 weeks, please DM @blrhc in discord to figure it out.
+
 # Get Started
 To get started and participate on the Joystream testnets, you must first generate `Key(s)`, and sign up for a `Membership`. This requires no software or downloads, and can be done in your browser on Pioneer [here](https://testnet.joystream.org).
 
 ## Generate Keys
-Click `My Keys` in the sidebar, and then click the `Add account` button. The choices you make from here depend to a certain degree on how you intend to participate. If you just want to play around, you can follow the recommended defaults. If you have a specific role in mind, you may instead want to follow the links to the instructions in the [header of this document](#guides-to-get-started-on-our-current-testnet-in-links-below), or compare them in more detail [here](#active-roles).
+There are two ways to generate keys
 
-In any event, the `Keys` will be automatically stored in your browser storage for your convenience, but even so it's safest to save your `Raw seed` (you need it for certain roles) and save the .json file associated with the key. The `Mnemonic` can also be used to restore your `Keys`, but keeping the .json file somewhere safe is recommended, as it is the preferred format used to import your key in to certain tools, such as the [CLI](/tools/cli).
+### Generate Keys with polkadot.js
+First of all, you should have polkadot.js extention. If you don't have it, there is instruction how to install it:
+
+1. Go to https://polkadot.js.org/extension/ and download extention for your browser (Google Chrome of Mozilla Firefox).
+2. Create a wallet. Don't forger to save your mnemonic in safety place! Otherwise, you will not have opportunity to restore access to your wallet. Generate password and repeat it.
+3. Go to https://testnet.joystream.org/ and give the site access to your wallet. Now you can see you polkadot.js wallet in Pioneer.
+
+### Generate Keys with Pioneer
+Go to https://testnet.joystream.org/. Click `My Keys` in the sidebar, and then click the `Add account` button. 
+
+The `Keys` will be automatically stored in your browser storage for your convenience, but even so it's safest to save your `Raw seed` (you need it for certain roles) and save the .json file associated with the key. The `Mnemonic` can also be used to restore your `Keys`, but keeping the .json file somewhere safe is recommended, as it is the preferred format used to import your key in to certain tools, such as the [CLI](/tools/cli).
 
 ## Get a Membership
-To become a `Member` of the platform, you will need some tokens. There is now a `faucet` available as part of the Joystream Player app which grants participants with tokens to create a membership to start uploading content. Currently, the only other way to get tokens is to join our [Discord server](https://discord.gg/DE9UN3YpRP) and ask for some there. This group is also a great place to get support and discuss Joystream with other community members.
+There are two ways to become a `Member`.
+
+### Get a Membership in Pioneer
+To become a `Member` of the platform this way, you will need some tokens. You can use `faucet` bot which gives you 101 tJOY token. It's enough to create a `Member`. You can use bot in telegram directly https://t.me/JoystreamLeaderboardBot or in Russian speaking community chat https://t.me/JoystreamRussian, In both cases, just write `/faucet` and your wallet address (for example, /faucet 5CfvucTCGAsuTyeGeYFQA7Pj6JnfsVb4xvqdhwzoB2HEjazk). Very soon you'll get your tokens!
 
 **Note:**
 There are currently no fees associated with most transactions, but some parts of Pioneer may still require you to maintain a balance of at least 1 tJOY to allow you to perform certain actions.
 
-If you have tokens and would like to create a membership via Pioneer, click `Membership` in the sidebar, and select the `Register` tab. Choose a `Handle/nickname`. Optionally, provide a link to an image file for your avatar, and fill in the markdown-enabled `About` field.
+Then click `Membership` in the sidebar, and select the `Register` tab. Choose a `Handle/nickname`. Optionally, provide a link to an image file for your avatar, and fill in the markdown-enabled `About` field.
+
+### Get Membership in Atlas
+To become a `Member` this way, you don't need to use `faucet` and ask for tokens. 
+
+Just go to https://play.joystream.org/ and click button `Start publishing`, then `New membership`. Choose polkadot.js extention wallet which you want to use for becoming a `Member`. To accept all the terms, you should scroll the rules all the way down. Now you can choose a name for your `Member`, add avatar and information about you. done!
 
 
 # Incentives

@@ -187,8 +187,8 @@ $ ./setup.sh
 $ exit
 $ ssh user@ipOrURL
 $ cd joystream
-$ ./build-packages
-$ yarn distributor-node --help
+$ ./build-packages.sh
+$ ./distributor-node/bin/run --help
 ```
 
 ### Applying for a Distributor opening
